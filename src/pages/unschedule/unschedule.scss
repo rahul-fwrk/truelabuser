@@ -1,0 +1,88 @@
+page-unschedule {
+
+.chat.icon.icon-md.ion-md-chatboxes, .chat.icon.icon-ios.ion-ios-chatboxes{
+    font-size: 2.1em;
+    left: 13px;
+    position: absolute;
+    top: 16px;
+    color:#3fb1ce;
+    }
+
+
+.searchbar-md .searchbar-input {
+    border: 1px solid #ccc;
+    box-shadow: none;
+}
+
+
+.list-ios > .item-block:first-child {
+    border-top: 0px solid #c8c7cc;
+}
+
+.main_sec{
+    .input{font-size: 10px;}
+    p {font-size: 1.2rem;}
+    button{text-transform: capitalize;}
+    h2{color:#3fb1ce;}
+}
+
+
+.ftr .toolbar-background-md {
+    border-color: transparent;
+    background: transparent;
+}
+
+ .ftr .toolbar-background-ios {
+    background: transparent;
+}
+
+.alert-md .alert-title p {
+    font-size: 16px;
+    text-align: center;
+}
+
+ .myblu{
+         padding: 0 .6em;
+    height: 25px;
+    font-size: 1.2rem;
+    color: #fff;
+    background-color: #3fb1ce;
+ }   
+}
+
+.myclass 
+{
+    .alert-button-group{
+        background: rgba(63, 177, 206, 0);
+            padding: 0px 0px 7px 8px;
+    .alert-button {
+    background: #3fb1ce;
+    width: 100%;
+    float: left;
+    color:#fff;
+    .button-inner{
+            text-align: center;
+    width: 10%;
+    float: left;
+    margin: 0 45%;
+    }
+}
+    }
+    .alert-message{
+        max-height: 260px;
+    padding: 13px 11px;
+    font-size: 1.4rem;
+    line-height: 21px;
+    }
+    .alert-head{
+    background: #3fb1ce;
+    color: #fff;
+        padding: 15px 15px;
+    p{
+    padding: 0;
+    margin: 0;
+    font-size: 1.6rem;
+    text-transform: capitalize; 
+    }
+    }
+}

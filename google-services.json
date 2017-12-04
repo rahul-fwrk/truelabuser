@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "402967999870",
+    "firebase_url": "https://true-lab-phleb.firebaseio.com",
+    "project_id": "true-lab-phleb",
+    "storage_bucket": "true-lab-phleb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:402967999870:android:907ff72588dbf555",
+        "android_client_info": {
+          "package_name": "com.truelab.phleb488962"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "402967999870-cgepr2epvvlvpf1c95opoajn4jht8rh1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCMECg6ToQDGi5w7LVdHe6gD66Npb2UVgk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

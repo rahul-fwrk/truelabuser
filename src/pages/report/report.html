@@ -1,0 +1,136 @@
+<ion-header>
+  <ion-toolbar color="blu">
+    <ion-buttons left>
+      <button ion-button (click)="doYourStuff()">
+            <ion-icon class="customIcon" name="arrow-back"></ion-icon>
+        </button>
+    </ion-buttons>
+    <ion-title>Back</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="main_sec" padding>
+  <form (ngSubmit)="onSubmit()" #heroForm="ngForm" novalidate>
+    <!--<div class="pic">
+		<img src="assets/images/logo.png" />
+   </div>-->
+    <ion-list *ngIf="this.isData == 1">
+      <ion-item *ngIf="this.testBit == 0">
+        <ion-label floating>{{test_name}} ({{units}}): {{refRange}}  </ion-label>
+        <ion-title> Range : {{refRange}} </ion-title> 
+        <ion-input [(ngModel)]="data.report" name="report" type="number" step="0.01" id="report" required #report="ngModel"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="this.testBit == 0">
+      <ion-label>Flag</ion-label>
+        <ion-select [(ngModel)]="data.flag"  name="flag" id="flag" required #flag="ngModel">
+          <ion-option value="HIGH">HIGH</ion-option>
+          <ion-option value="NORMAL">NORMAL</ion-option>
+           <ion-option value="LOW">LOW</ion-option>
+        </ion-select>
+      </ion-item>
+
+
+      <ion-item *ngIf="this.testBit == 1">
+        <ion-label floating>{{INR}} ({{inrUnit}}) : {{inrRange}}  </ion-label>
+        <ion-title> Range : {{inrRange}} </ion-title> 
+        <ion-input [(ngModel)]="data.INRreport" name="INRreport" type="number" step="0.01" id="INRreport" required #INRreport="ngModel"></ion-input>
+      </ion-item>
+     <ion-item *ngIf="this.testBit == 1">
+      <ion-label>Flag</ion-label>
+        <ion-select [(ngModel)]="data.inrflag"  name="inrflag" id="inrflag" required #inrflag="ngModel">
+          <ion-option value="HIGH">HIGH</ion-option>
+          <ion-option value="NORMAL">NORMAL</ion-option>
+           <ion-option value="LOW">LOW</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item *ngIf="this.testBit == 1">
+        <ion-label floating>{{PT}} ({{ptUnit}}) :  {{ptRange}} </ion-label>
+        <ion-title> Range : {{ptRange}} </ion-title> 
+        <ion-input [(ngModel)]="data.PTreport" name="PTreport" type="number" step="0.01" id="PTreport" required #PTreport="ngModel"></ion-input>
+      </ion-item>
+       <ion-item *ngIf="this.testBit == 1">
+      <ion-label>Flag</ion-label>
+        <ion-select [(ngModel)]="data.ptflag"  name="ptflag" id="ptflag" required #ptflag="ngModel">
+          <ion-option value="HIGH">HIGH</ion-option>
+          <ion-option value="NORMAL">NORMAL</ion-option>
+           <ion-option value="LOW">LOW</ion-option>
+        </ion-select>
+      </ion-item>
+
+
+      <ion-item>
+        <ion-label floating>Conclusion : </ion-label>
+        <ion-input [(ngModel)]="data.remarks" name="remarks" type="text" id="remarks" #remarks="ngModel"> </ion-input>
+      </ion-item>
+
+    </ion-list>
+
+
+
+
+      <ion-list *ngIf="this.isData == 0">
+      <ion-item *ngIf="this.testBit == 0">
+        <ion-label floating>{{test_name}} ({{units}}):  {{refRange}} </ion-label>
+        <ion-title> Range : {{refRange}} </ion-title> 
+        <ion-input [(ngModel)]="data.report" name="report" type="number" step="0.01" id="report" required #report="ngModel"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="this.testBit == 0">
+      <ion-label>Flag</ion-label>
+        <ion-select [(ngModel)]="data.flag"  name="flag" id="flag" required #flag="ngModel">
+          <ion-option value="HIGH">HIGH</ion-option>
+          <ion-option value="NORMAL">NORMAL</ion-option>
+           <ion-option value="LOW">LOW</ion-option>
+        </ion-select>
+      </ion-item>
+
+
+      <ion-item *ngIf="this.testBit == 1">
+        <ion-label floating>{{INR}} ({{inrUnit}})  : {{inrRange}} </ion-label>
+        <ion-title> Range : {{inrRange}} </ion-title> 
+        <!--inrRange-->
+        <ion-input [(ngModel)]="data.INRreport" name="INRreport" type="number" step="0.01" id="INRreport" required #INRreport="ngModel"></ion-input>
+      </ion-item>
+     <ion-item *ngIf="this.testBit == 1">
+      <ion-label>Flag</ion-label>
+        <ion-select [(ngModel)]="data.inrflag"  name="inrflag" id="inrflag" required #inrflag="ngModel">
+          <ion-option value="HIGH">HIGH</ion-option>
+          <ion-option value="NORMAL">NORMAL</ion-option>
+           <ion-option value="LOW">LOW</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item *ngIf="this.testBit == 1">
+        <ion-label floating>{{PT}} ({{ptUnit}}) : {{ptRange}} </ion-label>
+        <ion-title> Range : {{ptRange}} </ion-title> 
+        <ion-input [(ngModel)]="data.PTreport" name="PTreport" type="number" step="0.01" id="PTreport" required #PTreport="ngModel"></ion-input>
+      </ion-item>
+       <ion-item *ngIf="this.testBit == 1">
+      <ion-label>Flag</ion-label>
+        <ion-select [(ngModel)]="data.ptflag"  name="ptflag" id="ptflag" required #ptflag="ngModel">
+          <ion-option value="HIGH">HIGH</ion-option>
+          <ion-option value="NORMAL">NORMAL</ion-option>
+           <ion-option value="LOW">LOW</ion-option>
+        </ion-select>
+      </ion-item>
+
+
+      <ion-item>
+        <ion-label floating>Conclusion : </ion-label>
+        <ion-input [(ngModel)]="data.remarks" name="remarks" type="text" id="remarks" #remarks="ngModel"> </ion-input>
+      </ion-item>
+
+    </ion-list>
+    <button ion-button block color="blu" [disabled]="!heroForm.form.valid" (click)="reportSub(heroForm);">Submit</button>
+  </form>
+  <ion-list style="margin-bottom: 0;">
+
+    <ion-item class="remem">
+      <!-- <ion-label>Remember me next time</ion-label> -->
+      <!-- <ion-checkbox [(ngModel)]="pepperoni"></ion-checkbox> -->
+    </ion-item>
+
+  </ion-list>
+
+</ion-content>

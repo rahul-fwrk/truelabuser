@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>2727505737-900djlf4mrfmhrvb88tbfu5jlj39uvvm.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.2727505737-900djlf4mrfmhrvb88tbfu5jlj39uvvm</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAG75Zr6AI3jA9RzlZzA-_UhPi_n2rqn60</string>
+	<key>GCM_SENDER_ID</key>
+	<string>2727505737</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.ionicframework.truelab488962</string>
+	<key>PROJECT_ID</key>
+	<string>truelab-22d7e</string>
+	<key>STORAGE_BUCKET</key>
+	<string>truelab-22d7e.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:2727505737:ios:1f2139bbe55e8827</string>
+	<key>DATABASE_URL</key>
+	<string>https://truelab-22d7e.firebaseio.com</string>
+</dict>
+</plist>

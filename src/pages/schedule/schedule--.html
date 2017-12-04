@@ -1,0 +1,130 @@
+<ion-header>
+  <ion-toolbar color="blu">
+    <button ion-button menuToggle left>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Schedule</ion-title>
+  </ion-toolbar>
+   <ion-toolbar no-padding>
+  <ion-grid  style="padding: 0px 5px;">
+    <ion-row>
+    <!--   <ion-col col-2>
+        <ion-icon name="chatboxes" class="chat"></ion-icon> 
+      </ion-col> -->
+
+       <ion-col col-12>
+   <ion-searchbar [(ngModel)]="myInput" [showCancelButton]="shouldShowCancel" (ionInput)="setFilteredItems()" (ionCancel)="onCancel()"></ion-searchbar>
+		<!-- <ion-input  [(ngModel)]="data.search" name="search" type="text" #search="ngModel"></ion-input> -->
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-toolbar>
+</ion-header>
+
+
+<ion-content class="main_sec">
+
+
+<ion-grid  style="padding: 0px 5px;"  *ngIf="errorValue == 2">
+ <ion-row   *ngFor="let patient of this.PatientList" style="padding: 6px 3px;">
+         <ion-col col-sm-6 col-md-6 col-lg-6 col-xl-12> 
+            	<h2>{{patient.Patient.trackingid}}</h2>
+		          <p text-wrap>{{patient.PatientTest.schdueleddate}}</p>
+         </ion-col>
+         <ion-col  col-sm-6 col-md-6 col-lg-6 col-xl-12 style="text-align: center;"> 
+            <button color="blu" ion-button item-right (click)="viewPage(patient.Patient.id,patient.PatientTest.id,patient.PatientTest.testid);">View Detail</button>
+            <button color="blu" ion-button item-right [disabled]="patient?.PatientTest?.reportpdf != null" (click)="reSchedModal(patient.Patient.id, patient?.PatientTest?.id, patient?.PatientTest?.testid, patient?.PatientTest?.doctorid);"> Reschedule</button>
+            <button color="danger" ion-button item-right [disabled]="patient?.PatientTest?.reportpdf != null"  (click)="presentModal(patient.Patient.id,patient?.PatientTest?.id, patient?.PatientTest?.testid, patient?.PatientTest?.doctorid);">Decline</button>
+	      </ion-col>
+ </ion-row>
+ </ion-grid>
+
+
+<ion-grid  style="padding: 0px 5px;"  *ngIf="errorValue == 0">
+ <ion-row   *ngFor="let patient of this.searchArray" style="padding: 6px 3px;">
+         <ion-col col-sm-6 col-md-6 col-lg-6 col-xl-12> 
+            	<h2>{{patient.Patient.trackingid}}</h2>
+		          <p text-wrap>{{patient.PatientTest.schdueleddate}}</p>
+         </ion-col>
+         <ion-col  col-sm-6 col-md-6 col-lg-6 col-xl-12 style="text-align: center;"> 
+            <button color="blu" ion-button item-right (click)="viewPage(patient.Patient.id,patient.PatientTest.id,patient.PatientTest.testid);">View Detail</button>
+            <button color="blu" ion-button item-right [disabled]="patient?.PatientTest?.reportpdf != null" (click)="reSchedModal(patient.Patient.id, patient?.PatientTest?.id, patient?.PatientTest?.testid, patient?.PatientTest?.doctorid);"> Reschedule</button>
+            <button color="danger" ion-button item-right [disabled]="patient?.PatientTest?.reportpdf != null"  (click)="presentModal(patient.Patient.id,patient.PatientTest.id, patient?.PatientTest?.testid, patient?.PatientTest?.doctorid);">Decline</button>
+	      </ion-col>
+ </ion-row>
+ </ion-grid>
+
+
+<ion-grid  style="padding: 0px 5px;"  *ngIf="customMsg == 1">
+ <ion-row>
+         <ion-col col-sm-12 col-md-12 col-lg-12 col-xl-12> 
+            		<p text-wrap text-center style="font-size: 15px;"> Please write something...</p>
+         </ion-col>
+ </ion-row>
+ </ion-grid>
+
+
+<ion-grid  style="padding: 0px 5px;" *ngIf="errorValue == 1">
+ <ion-row>
+         <ion-col col-sm-12 col-md-12 col-lg-12 col-xl-12> 
+            		<p text-wrap text-center style="font-size: 15px;"> You have not scheduled any task yet.</p>
+         </ion-col>
+ </ion-row>
+ </ion-grid>
+
+
+	
+
+
+
+
+
+<!--<ion-list>
+   <ion-item  *ngIf="errorValue == 2">
+	  <ion-item  *ngFor="let patient of this.PatientList">
+		<h2>{{patient.Patient.trackingid}}</h2>
+		<p text-wrap>{{patient.PatientTest.schdueleddate}}</p>
+		<button color="blu" ion-button item-right (click)="viewPage(patient.Patient.id,patient.PatientTest.id,patient.PatientTest.testid);">View Detail</button>
+		<button color="blu" ion-button item-right (click)="reSchedModal(patient.Patient.id, patient?.PatientTest?.id, patient?.PatientTest?.testid, patient?.PatientTest?.doctorid);">Reschedule</button>
+		<button color="danger" ion-button item-right (click)="presentModal(patient.Patient.id,patient.PatientTest.id, patient?.PatientTest?.id, patient?.PatientTest?.testid, patient?.PatientTest?.doctorid);">Decline</button>
+	  </ion-item>
+  </ion-item>
+
+
+  <ion-item *ngIf="errorValue == 0">
+	  <ion-item *ngFor="let patient of this.searchArray">
+		<h2>{{patient.Patient.trackingid}}</h2>
+		<p text-wrap>{{patient.PatientTest.schdueleddate}}</p>
+		<button color="blu" ion-button item-right (click)="viewPage(patient.Patient.id,patient.PatientTest.id,patient.PatientTest.testid);">View Detail</button>
+		<button color="blu" ion-button item-right (click)="reSchedModal(patient.Patient.id,patient?.PatientTest?.id, patient?.PatientTest?.testid, patient?.PatientTest?.doctorid);">Reschedule</button>
+		<button color="danger" ion-button item-right (click)="presentModal(patient.Patient.id,patient?.PatientTest?.id, patient?.PatientTest?.testid, patient?.PatientTest?.doctorid);">Decline</button>
+	  </ion-item>
+  </ion-item> 
+
+   <ion-item *ngIf="customMsg == 1">
+   
+	 Please write something...
+  </ion-item>
+
+
+
+  <ion-item *ngIf="errorValue == 1">
+	You have not scheduled any task yet.
+	 <button color="danger" ion-button item-right (click)="presentModal();">Decline</button> 
+  </ion-item>
+     <button ion-button block color="blu" (click)="uploadReport()">Upload Report</button> 
+	  <button ion-button block color="blu" (click)="uploadfile()">Upload File</button> 
+	  <div class="col-sm-7">
+                <div>
+                    <input type="file" (change)="fileChangeEvent($event)" placeholder="Upload file..."  accept=".pdf,.doc,.docx"/>                         
+                </div>   
+            </div>
+	  <ion-item>
+    <h2>Patient 1</h2>
+    <p text-wrap>17 Apr 2017,4:30PM</p>
+    <button color="blu" ion-button item-right >View Detail</button>
+    <button color="danger" ion-button item-right >Decline</button>
+  </ion-item> 
+</ion-list>-->
+
+</ion-content>

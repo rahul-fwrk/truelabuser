@@ -1,0 +1,80 @@
+<ion-header>
+  <ion-toolbar color="blu">
+    <ion-buttons left>
+        <button ion-button (click)="doYourStuff()">
+            <ion-icon class="customIcon" name="arrow-back"></ion-icon>
+        </button>
+    </ion-buttons>
+    <ion-title>View</ion-title>
+  </ion-toolbar>
+   
+</ion-header>
+
+
+<ion-content class="main_sec">
+
+<ion-card>
+
+
+<ion-list class="tst">
+  <ion-item><h2>Patient Name: </h2><span> {{PatientDetail.firstname}} {{PatientDetail.lastname}} </span> </ion-item>
+
+  <ion-item><h2>Gender: </h2> <span> {{PatientDetail.sex}} </span> </ion-item>
+
+  <ion-item><h2>DOB: </h2> <span> {{PatientDetail.dob}} </span> </ion-item>
+
+  <ion-item><h2>Phone Number: </h2><span>  {{PatientDetail.phonenumber}} </span> </ion-item>
+
+  <ion-item class="whitespace1"><h2>Address:  </h2><span> {{PatientDetail.address}}, <span *ngIf="PatientDetail.address2"> {{PatientDetail.address2}}, </span> {{PatientDetail.city}} , {{PatientDetail.state}}, {{PatientDetail.zip}} </span> </ion-item>
+
+  <!--<ion-item class="whitespace1"><h2>Address 2:  </h2><span>   </span> </ion-item>-->
+
+
+  <ion-item *ngIf="PatientDetail.doctorname" ><h2>Doctor Name : </h2> <span>{{PatientDetail.doctorname}}</span> </ion-item>
+
+  <ion-item *ngIf="PatientDetail.doctornumber" ><h2>Doctor Phone : </h2><span> {{PatientDetail.doctornumber}} </span> </ion-item>
+
+  <ion-item [hidden]="this?.agencyDetails?.agencyname == '' || this?.agencyDetails?.agencyname == null"><h2>Agency Name : </h2> <span> {{this?.agencyDetails?.agencyname}} </span> </ion-item>
+
+  <ion-item [hidden]="this?.agencyDetails?.agencyphonenumber == '' || this?.agencyDetails?.agencyphonenumber == null"><h2>Agency Phone : </h2> <span> {{this?.agencyDetails?.agencyphonenumber}} </span> </ion-item>
+
+  <ion-item> <h2>Test : </h2> <span style="color: #bb0000;"> {{this.testName.test}}  </span>  </ion-item>
+
+  <ion-item>
+    <h2>Fasting :</h2>
+    <span *ngIf="this.testDetails.fasting == 1"> Yes </span>
+    <span *ngIf="this.testDetails.fasting != 1"> No </span>
+  </ion-item>
+
+  <ion-item><h2>Patient details : </h2> <span> {{PatientDetail.diagnosis}} </span> </ion-item>
+
+  <ion-item *ngIf="testDetails.testdiagnosis != '' " ><h2>Diagnosis : </h2> <span> {{testDetails.testdiagnosis}} </span> </ion-item>
+
+  <ion-item><h2>Requested Date : </h2> <span> {{testDetails.request_date}} </span> </ion-item>
+ 
+
+  <!--<ion-item  *ngIf="this.clientsignIMG != ''">
+            <h2> Doctor Signature : </h2> 
+            <img  [src]="this.clientsignIMG" alt="clientSign">
+  </ion-item>
+
+  <ion-item  *ngIf="this.clientsignIMG == ''" >
+            <h2> Doctor Signature : </h2> No Signature
+  </ion-item>-->
+
+
+
+</ion-list>
+
+</ion-card>
+
+
+<ion-footer class="ftr" no-border>
+   <ion-toolbar > 
+  <!-- <button ion-button block color="blu" (click)="uploadReport(this.testDetails.id);">Upload Report</button>  -->
+   <!-- <!-- presentModal(this.testDetails.id) --> 
+   </ion-toolbar> 
+</ion-footer>
+    
+ 
+</ion-content>

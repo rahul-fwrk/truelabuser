@@ -1,0 +1,41 @@
+<ion-menu [content]="content" id="menu1">
+  <ion-header>
+    <ion-toolbar color="blu" padding>
+      <ion-item color="blu">
+        <ion-avatar item-left>
+          <img [src]="this.srcImage" />
+        </ion-avatar>
+        <h2> {{user_name}} </h2>
+        <button style="background: transparent;color:#fff;padding:0;" menuClose clear (click)="nav.setRoot(pages2.EditprofilePage)">Edit profile</button>
+      </ion-item>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content style="background:#3fb1ce;">
+    <ion-list>
+
+      <ion-item color="blu">
+        <button menuClose color="blu" ion-item (click)="nav.setRoot(pages2.TaskPage)">
+            <ion-icon name="home"></ion-icon> Unschedule
+        </button>
+        <button menuClose color="blu" ion-item (click)="nav.setRoot(pages2.SchedulePage)">
+            <ion-icon name="person"></ion-icon> Schedule
+        </button>
+        <button menuClose color="blu" ion-item (click)="nav.setRoot(pages2.UnschedulePage)">
+          <ion-icon name="briefcase"></ion-icon> Cancelled
+        </button>
+        <button menuClose color="blu" ion-item (click)="nav.setRoot(pages2.ChangepwdPage)">
+            <ion-icon name="person"></ion-icon> Change password
+        </button>
+        <button menuClose color="blu" ion-item (click)="logOut(pages2.SigninPage);">
+            <ion-icon name="log-out"></ion-icon> Logout
+        </button>
+      </ion-item>
+
+    </ion-list>
+  </ion-content>
+
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

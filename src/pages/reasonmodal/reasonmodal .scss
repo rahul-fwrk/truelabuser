@@ -1,0 +1,43 @@
+page-reasonmodal {
+
+.list-ios > .item-block:first-child {
+    border-top: 0px solid #c8c7cc;
+}
+
+
+textarea.text-input {
+    resize: vertical;
+    width: 100%;
+    float: left;
+    background: #fff;
+    padding-left: 10px;
+    font-size: 16px;
+    margin-top: 0;
+    height: 200px;
+}
+
+textarea.text-input-ios {
+    margin: 11px 8px 11px 8px;
+}
+
+.txt {
+    background: #f2f2f2;
+}
+
+.datetime button {
+    border: 1px solid #3fb1ce;
+}
+
+
+.ftr .toolbar-background-md {
+    border-color: transparent;
+    background: transparent;
+}
+
+.ftr .toolbar-background-ios {
+    border-color: transparent;
+    background: transparent;
+}
+
+
+}

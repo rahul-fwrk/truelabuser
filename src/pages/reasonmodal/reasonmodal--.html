@@ -1,0 +1,57 @@
+<ion-header hidden>
+  <ion-toolbar color="blu">
+    <ion-buttons left>
+        <button ion-button (click)="doYourStuff()">
+            <ion-icon class="customIcon" name="arrow-back"></ion-icon>
+        </button>
+    </ion-buttons>
+    <ion-title>honey</ion-title>
+  </ion-toolbar>
+   
+</ion-header>
+
+
+
+
+<ion-card class="txt" style="position: absolute;top: 10vh;">
+
+	  <ion-card-header style="background:#3fb1ce; color:#fff;">
+		 <span style="float:left;">Decline Task</span>
+		 <ion-buttons style="float:right;">
+			<button style="background: transparent;" (click)="doYourStuff()">
+				<ion-icon class="customIcon" name="close" color="light"></ion-icon>
+			</button>
+		</ion-buttons>
+	  </ion-card-header>
+ 
+	  <ion-item style="background: none;">
+		<ion-label floating>Reason for declining</ion-label>
+		<ion-input  [(ngModel)]="reason" type="text" style="border-bottom: 1px solid #ccc;" ngDefaultControl></ion-input>
+	  </ion-item>
+	  <ion-label class="rest11" *ngIf="errorValue == 1">
+		Please give a reason.
+	  </ion-label>
+  
+	<ion-card-content style="padding: 16px 16px 30px 16px; ">
+		<ion-label >Declined by : </ion-label>
+		 <ion-list radio-group [(ngModel)]="value" >
+		  <ion-item>
+			<ion-label>User </ion-label>
+			<ion-radio  value="user" ngDefaultControl></ion-radio>
+		  </ion-item>
+
+		  <ion-item>
+			<ion-label>Patient </ion-label>
+			<ion-radio  value="patient" ngDefaultControl></ion-radio>
+		  </ion-item>
+		</ion-list> 
+		 <ion-label class="rest11" *ngIf="errorValue == 2">
+		Please choose one.
+	  </ion-label>
+    </ion-card-content>
+		<ion-buttons>
+        <button style="width: 100%;padding: 10px;background-color:rgb(63, 177, 206);color: white;font-size: 16px;" (click)="getdata(reason,value)" > Done </button>
+    </ion-buttons>
+	
+</ion-card>
+

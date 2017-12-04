@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar color="blu">
+    <ion-buttons left>
+        <button ion-button (click)="doYourStuff()">
+            <ion-icon class="customIcon" name="arrow-back"></ion-icon>
+        </button>
+    </ion-buttons>
+    <ion-title>Reports</ion-title>
+  </ion-toolbar>
+   
+</ion-header>
+
+
+<ion-content>
+
+<ion-card class="txt">
+  <ion-card-header style="padding: 16px 0px 16px 8px;color:#3fb1ce;">
+     17 april 2017, 05:30pm
+  </ion-card-header>
+  <ion-card-content style="padding: 0px 16px 13px 3px;">
+   <ion-textarea placeholder="Report text...."></ion-textarea>
+  </ion-card-content>
+</ion-card>
+    
+
+
+  <ion-fab right bottom>
+    <button ion-fab color="light" (click)="uploadReport()"><ion-icon name="navigate"></ion-icon></button>
+  </ion-fab>
+
+
+
+</ion-content>

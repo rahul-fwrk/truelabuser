@@ -1,0 +1,88 @@
+<ion-header>
+  <ion-toolbar color="blu">
+    <button ion-button menuToggle left>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Cancelled Tasks</ion-title>
+  </ion-toolbar>
+   <ion-toolbar no-padding>
+  <ion-grid  style="padding: 0px 5px;">
+    <ion-row>
+      <!--<ion-col col-2>
+        <ion-icon name="chatboxes" class="chat"></ion-icon>
+      </ion-col>-->
+
+       <ion-col col-12>
+  <ion-searchbar [(ngModel)]="myInput" [showCancelButton]="shouldShowCancel" (ionInput)="setFilteredItems()" (ionCancel)="onCancel()"></ion-searchbar>
+		<!-- <ion-searchbar [(ngModel)]="myInput" [showCancelButton]="shouldShowCancel" (ionInput)="onInput($event)" (ionCancel)="onCancel($event)"></ion-searchbar> -->
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-toolbar>
+</ion-header>
+
+
+<ion-content class="main_sec">
+ 
+
+ <!--<ion-grid  style="padding: 0px 5px;" *ngIf="errorValue == 2">
+ <ion-row  *ngFor="let patient of this.PatientList">
+         <ion-col col-6 col-sm-12 col-md-6 col-lg-6 col-xl-12> 
+            <h2 >{{patient.Patient[0].trackingid}}</h2>
+		        <p text-wrap>{{patient.StatusCancel.created_date}}</p>
+         </ion-col>
+         <ion-col col-6 col-sm-12 col-md-6 col-lg-6 col-xl-12> 
+             <button color="blu" ion-button item-right (click)="showPrompt(patient.StatusCancel.admin_reason);">Reason</button>
+         </ion-col>
+ </ion-row>
+ </ion-grid>
+
+
+
+ <ion-grid  style="padding: 0px 5px;"  *ngIf="errorValue == 0">
+ <ion-row  *ngFor="let patient of this.searchArray">
+         <ion-col col-6 col-sm-12 col-md-6 col-lg-6 col-xl-12> 
+            	<h2>{{patient.Patient[0].trackingid}}</h2>
+		          <p text-wrap>{{patient.StatusCancel.created_date}}</p>
+         </ion-col>
+         <ion-col col-6 col-sm-12 col-md-6 col-lg-6 col-xl-12> 
+             <button color="blu" ion-button item-right (click)="showPrompt(patient.StatusCancel.admin_reason);">Reason</button>
+         </ion-col>
+ </ion-row>
+ </ion-grid>
+
+ <ion-grid  style="padding: 0px 5px;"  *ngIf="errorValue == 1">
+ <ion-row>
+         <ion-col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12> 
+            		<p text-wrap text-center style="font-size: 15px;">You do not have any canceled tasks.</p>
+         </ion-col>
+ </ion-row>
+ </ion-grid>-->
+
+
+
+
+
+<ion-list>
+<ion-item *ngIf="errorValue == 2">
+  <ion-item  *ngFor="let patient of this.PatientList">
+  <h2 (click)="detailsPage(patient.StatusCancel.patientid,patient.StatusCancel.patienttestid,patient.StatusCancel.testid)">{{patient.Patient.trackingid}}</h2>
+  <p text-wrap>{{patient.StatusCancel.created}}</p>
+      <button class="myblu" color="blu"  ion-button item-right (click)="showPrompt(patient.StatusCancel.admin_reason);">Reason</button>
+</ion-item>
+</ion-item>
+  
+  <ion-item *ngIf="errorValue == 0">
+  <ion-item *ngFor="let patient of this.searchArray">
+  <h2>{{patient.Patient.trackingid}}</h2>
+  <p text-wrap>{{patient.StatusCancel.created}}</p>
+  <button class="myblu" color="blu" ion-button item-right (click)="showPrompt(patient.StatusCancel.admin_reason);">Reason</button>
+  </ion-item>
+</ion-item>
+<ion-item *ngIf="errorValue == 1">
+<p text-wrap text-center style="font-size: 15px;">You do not have any canceled tasks.</p>
+</ion-item>
+
+</ion-list>
+
+</ion-content>

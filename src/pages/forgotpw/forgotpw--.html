@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar color="blu">
+    <ion-buttons start left>
+    <button clear  ion-button (click)="nextPage()" >
+      <ion-icon name="ios-arrow-back-outline"></ion-icon>
+    </button>
+    </ion-buttons>
+    <ion-title>Back</ion-title>
+   
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="main_sec" padding>
+
+<div class="pic">
+    <img src="assets/images/logo.png" />
+</div>
+ <form #heroForm="ngForm"novalidate>
+  <ion-list style="position: relative;">
+  
+  <ion-item >
+    <ion-label floating>Enter Your Registered Email ID</ion-label>
+	<ion-input  [(ngModel)]="data.email" name="email" type="email" id="email" required pattern='^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$' #email="ngModel"></ion-input>
+    </ion-item>
+    <ion-label>
+		 <div *ngIf="email.errors && (email.dirty || email.touched)" class="alert alert-danger">
+		   <div [hidden]="!email.errors.required" class="alert alert-danger">
+			 Email is required
+			</div>
+			<div [hidden]="!email.errors.pattern" class="alert alert-danger">
+			 In-valid Email
+			</div>
+		 </div>
+    </ion-label>
+ 
+  
+  <!-- <ion-item style="border-bottom: 1px solid #e8e7ee;"> -->
+    <!-- <ion-label floating>Re-enter new password</ion-label> -->
+    <!-- <ion-input type="password"></ion-input> -->
+  <!-- </ion-item> -->
+
+</ion-list>
+</form>
+<button ion-button block color="blu" (click)="forgotPwd(heroForm);" [disabled]="!heroForm.form.valid">Submit</button>
+<!--<a target="_blank" (click)="getPdf('http://rakesh.crystalbiltech.com/truelab/MPDF57/pdf/1495714917.pdf)"> Download </a>-->
+<!--<a (click)="nextPage()"> Home </a>-->
+
+</ion-content>

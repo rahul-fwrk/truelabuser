@@ -1,0 +1,80 @@
+<ion-header>
+  <ion-toolbar color="blu">
+   <button start ion-button menuToggle left>
+     <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Change Password</ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="main_sec" padding>
+
+  <div class="pic">
+    <img src="assets/images/logo.png" />
+  </div>
+  <form #heroForm="ngForm" novalidate>
+    <ion-list style="position: relative;">
+
+      <!--<ion-item >
+    <ion-label floating>Enter Your Registered Email ID</ion-label>
+	<ion-input  [(ngModel)]="data.email" name="email" type="email" id="email" required pattern='^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$' #email="ngModel"></ion-input>
+  </ion-item>
+  <ion-label>
+		 <div *ngIf="email.errors && (email.dirty || email.touched)" class="alert alert-danger">
+		   <div [hidden]="!email.errors.required" class="alert alert-danger">
+			 Email is required
+			</div>
+			<div [hidden]="!email.errors.pattern" class="alert alert-danger">
+			 In-valid Email
+			</div>
+		 </div>
+  </ion-label>-->
+      <ion-item>
+        <ion-label floating>Old password</ion-label>
+        <ion-input [(ngModel)]="data.password" name="password" type="password" id="password" required #password="ngModel"></ion-input>
+
+        <ion-label>
+          <div *ngIf="password.errors && (password.dirty || password.touched)" class="alert alert-danger">
+            <div [hidden]="!password.errors.required" class="alert alert-danger">
+              Old password is required
+            </div>
+          </div>
+        </ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>New password</ion-label>
+        <ion-input [(ngModel)]="data.newpassword" name="newpassword" type="password" id="newpassword" required minlength="6" #newpassword="ngModel"></ion-input>
+
+        <ion-label>
+          <div *ngIf="newpassword.errors && (newpassword.dirty || newpassword.touched)" class="alert alert-danger">
+            <div [hidden]="!newpassword.errors.required" class="alert alert-danger">
+              Password is required
+            </div>
+            <div [hidden]="!newpassword.errors.minlength" class="alert alert-danger">
+              Minimum length should be 6
+            </div>
+          </div>
+        </ion-label>
+      </ion-item>
+      <ion-item style="border-bottom: 1px solid #e8e7ee;">
+        <ion-label floating>Confirm Password</ion-label>
+        <ion-input [(ngModel)]="data.cpassword" name="cpassword" type="password" id="cpassword" required minlength="6" #cpassword="ngModel"></ion-input>
+
+        <ion-label>
+          <div *ngIf="cpassword.errors && (cpassword.dirty || cpassword.touched)" class="alert alert-danger">
+            <div [hidden]="!cpassword.errors.required" class="alert alert-danger">
+              Please confirm your password
+            </div>
+            <div [hidden]="!cpassword.errors.minlength" class="alert alert-danger">
+              Minimum length should be 6
+            </div>
+          </div>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </form>
+  <button ion-button block color="blu" (click)="changePwd(heroForm);" [disabled]="!heroForm.form.valid">Submit</button>
+</ion-content>

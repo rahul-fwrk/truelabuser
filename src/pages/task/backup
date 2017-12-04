@@ -1,0 +1,15 @@
+<NotepadPlus>
+    <Session activeView="0">
+        <mainView activeIndex="7">
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="1248" startPos="1291" endPos="1083" selMode="0" lang="HTML" encoding="-1" filename="D:\Honey\Ionic2\New folder\truelab\src\app\app.html" backupFilePath="" originalFileLastModifTimestamp="1493213737" />
+            <File firstVisibleLine="18" xOffset="0" scrollWidth="704" startPos="741" endPos="741" selMode="0" lang="HTML" encoding="-1" filename="D:\Honey\Ionic2\New folder\truelab\src\pages\task\task.html" backupFilePath="" originalFileLastModifTimestamp="1493274988" />
+            <File firstVisibleLine="36" xOffset="0" scrollWidth="1120" startPos="1965" endPos="1965" selMode="0" lang="JavaScript" encoding="-1" filename="D:\Honey\Ionic2\New folder\truelab\src\pages\forgotpw\forgotpw.ts" backupFilePath="" originalFileLastModifTimestamp="1493206528" />
+            <File firstVisibleLine="13" xOffset="0" scrollWidth="1552" startPos="1450" endPos="1450" selMode="0" lang="HTML" encoding="-1" filename="D:\Honey\Ionic2\New folder\truelab\src\pages\forgotpw\forgotpw.html" backupFilePath="" originalFileLastModifTimestamp="1493192102" />
+            <File firstVisibleLine="60" xOffset="0" scrollWidth="1080" startPos="2209" endPos="2209" selMode="0" lang="JavaScript" encoding="-1" filename="D:\Honey\Ionic2\New folder\truelab\src\pages\signin\signin.ts" backupFilePath="" originalFileLastModifTimestamp="1493270821" />
+            <File firstVisibleLine="90" xOffset="0" scrollWidth="1560" startPos="3667" endPos="2735" selMode="0" lang="JavaScript" encoding="-1" filename="D:\Honey\Ionic2\New folder\truelab\src\pages\editprofile\editprofile.ts" backupFilePath="" originalFileLastModifTimestamp="1493273702" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="1000" startPos="2359" endPos="2400" selMode="0" lang="JavaScript" encoding="-1" filename="D:\Honey\Ionic2\New folder\truelab\src\app\app.component.ts" backupFilePath="" originalFileLastModifTimestamp="1493274400" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="1560" startPos="107" endPos="107" selMode="0" lang="JavaScript" encoding="-1" filename="D:\Honey\Ionic2\New folder\truelab\src\pages\task\task.ts" backupFilePath="" originalFileLastModifTimestamp="1493275832" />
+        </mainView>
+        <subView activeIndex="0" />
+    </Session>
+</NotepadPlus>

@@ -1,0 +1,104 @@
+page-patientdetail {
+
+.chat.icon.icon-md.ion-md-chatboxes, .chat.icon.icon-ios.ion-ios-chatboxes{
+    font-size: 2.1em;
+    left: 13px;
+    position: absolute;
+    top: 16px;
+    color:#3fb1ce;
+    }
+
+
+.searchbar-md .searchbar-input {
+    border: 1px solid #ccc;
+    box-shadow: none;
+}
+
+
+.list-ios > .item-block:first-child {
+    border-top: 0px solid #c8c7cc;
+}
+
+.main_sec{
+    .input{font-size: 10px;}
+    p {font-size: 1.2rem;}
+    button{text-transform: capitalize;}
+    h2{color:#3fb1ce;}
+
+    .item.item-md .checkbox-md {
+    position: absolute;
+    display: block;
+    margin: 9px 16px 9px 4px;
+    right: 0;
+    top: 5px;
+}
+
+.item.item-ios .checkbox-ios {
+     position: absolute;
+    display: block;
+    margin: 9px 16px 9px 4px;
+    right: 0;
+    top: 5px;
+}
+
+.tst .label-ios {
+    margin: 0 8px 0 0;
+}
+
+}
+
+.tst .label-md {
+    margin: 0;
+}
+.checkbox-md-dark .checkbox-checked {
+    border-color: #3fb1ce;
+    background-color: #3fb1ce;
+}
+
+.checkbox-ios-dark .checkbox-checked {
+    border-color: #3fb1ce;
+    background-color: #3fb1ce;
+}
+
+.ftr .toolbar-background-md {
+    border-color: transparent;
+    background: transparent;
+}
+
+.ftr .toolbar-background-ios {
+    border-color: transparent;
+    background: transparent;
+}
+ion-label.label {
+    text-transform: capitalize;
+}
+.whitespace1 ion-label {white-space: normal !important;}
+
+.tst .label-md {
+    margin-bottom: 10px;
+}
+ion-card img {
+    display: block;
+    width: 61%;
+    float: left;
+    padding: 0px;
+}
+.tst h2 {  
+    float: left;
+    width: 100%;
+    margin-right: 10px;
+    margin-top: 0 !important;
+    margin-bottom: 5px;
+}
+.tst span {
+    white-space: normal;
+}
+.tst .item-md,.tst .item-ios{
+    padding-left: 0px;
+    margin-bottom: 10px;
+}
+.tst{
+    padding: 15px;
+}
+
+}

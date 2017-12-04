@@ -1,0 +1,131 @@
+<ion-header>
+  <ion-toolbar color="blu">
+    <button ion-button menuToggle left>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Unschedule</ion-title>
+  </ion-toolbar>
+   <ion-toolbar no-padding>
+  <ion-grid  style="padding: 0px 5px;">
+    <ion-row>
+      <!-- <ion-col col-2>
+        <ion-icon name="chatboxes" class="chat"></ion-icon> 
+      </ion-col> -->
+
+       <ion-col col-12>
+	     <ion-searchbar [(ngModel)]="myInput" [showCancelButton]="shouldShowCancel" (ionInput)="setFilteredItems()" (ionCancel)="onCancel()"></ion-searchbar>
+       <!-- <ion-searchbar [(ngModel)]="myInput" [showCancelButton]="shouldShowCancel" (ionInput)="onInput($event)" (ionCancel)="onCancel($event)"> </ion-searchbar> -->
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-toolbar>
+</ion-header>
+
+
+<ion-content class="main_sec">
+
+
+
+
+
+<ion-grid  style="padding: 0px 5px;"   *ngIf="errorValue == 2">
+ <ion-row  *ngFor="let patient of  this.PatientList" style="padding: 3px 15px;">
+         <ion-col col-sm-6 col-md-8 col-lg-4 col-xl-12> 
+            		<h2 (click)="detailsPage(patient.Patient.id,patient.PatientTest.id,patient.PatientTest.testid)"> {{patient.Patient.trackingid}}</h2>
+		            <p text-wrap>{{patient.PatientTest.schdueleddate}}</p>
+         </ion-col>
+         <ion-col col-sm-6 col-md-4 col-lg-4 col-xl-12 style="text-align: right;">  
+           <button color="blu" ion-button item-right (click)="presentModal(patient.Patient.id, patient?.PatientTest?.id, patient?.PatientTest?.testid,patient?.PatientTest?.doctorid);">Accept</button>
+           <button color="danger" ion-button item-right (click)="showAlert(patient.Patient.id, patient?.PatientTest?.id, patient?.PatientTest?.testid,patient?.PatientTest?.doctorid)">Decline</button>
+        </ion-col>
+ </ion-row>
+ </ion-grid>
+
+
+<ion-grid  style="padding: 0px 5px;"   *ngIf="errorValue == 0">
+ <ion-row  *ngFor="let patient of  this.searchArray" style="padding: 3px 15px;">
+         <ion-col col-sm-6 col-md-8 col-lg-3 col-xl-12> 
+            		<h2 (click)="detailsPage(patient.Patient.id,patient.PatientTest.id,patient.PatientTest.testid)"> {{patient.Patient.trackingid}}</h2>
+		            <p text-wrap>{{patient.PatientTest.schdueleddate}}</p>
+         </ion-col>
+         <ion-col col-sm-6 col-md-4 col-lg-4 col-xl-12 style="text-align: right;"> 
+           <button color="blu" ion-button item-right (click)="presentModal(patient.Patient.id, patient?.PatientTest?.id, patient?.PatientTest?.testid,patient?.PatientTest?.doctorid);">Accept</button>
+		      <button color="danger" ion-button item-right (click)="showAlert(patient.Patient.id, patient?.PatientTest?.id, patient?.PatientTest?.testid,patient?.PatientTest?.doctorid)">Decline</button>
+	      </ion-col>
+ </ion-row>
+ </ion-grid>
+
+
+<ion-grid  style="padding: 0px 5px;" *ngIf="errorValue == 1">
+ <ion-row>
+         <ion-col col-sm-12 col-md-12 col-lg-12 col-xl-12> 
+            		<h2> You have not been assigned any new tasks yet. </h2>
+         </ion-col>
+ </ion-row>
+ </ion-grid>
+
+
+
+
+
+
+<!--<ion-list>
+    <ion-item *ngIf="errorValue == 2">
+	  <ion-item *ngFor="let patient of  this.PatientList">
+		<h2 (click)="detailsPage(patient.Patient.id,patient.PatientTest.id,patient.PatientTest.testid)"> {{patient.Patient.trackingid}}</h2>
+		<p text-wrap>{{patient.PatientTest.schdueleddate}}</p>
+		<button color="blu" ion-button item-right (click)="presentModal(patient.Patient.id, patient?.PatientTest?.id, patient?.PatientTest?.testid,patient?.PatientTest?.doctorid);">Accept</button>
+		<button color="danger" ion-button item-right (click)="showAlert(patient.Patient.id, patient?.PatientTest?.id, patient?.PatientTest?.testid,patient?.PatientTest?.doctorid)">Decline</button>
+	  </ion-item>
+
+
+	</ion-item>
+	<ion-item *ngIf="errorValue == 0">
+	  <ion-item *ngFor="let patient of  this.searchArray">
+		<h2 (click)="detailsPage(patient.Patient.id,patient.PatientTest.id,patient.PatientTest.testid)"> {{patient.Patient.trackingid}}</h2>
+		<p text-wrap>{{patient.PatientTest.schdueleddate}}</p>
+		<button color="blu" ion-button item-right (click)="presentModal(patient.Patient.id, patient?.PatientTest?.id, patient?.PatientTest?.testid,patient?.PatientTest?.doctorid);">Accept</button>
+		<button color="danger" ion-button item-right (click)="showAlert(patient.Patient.id, patient?.PatientTest?.id, patient?.PatientTest?.testid,patient?.PatientTest?.doctorid)">Decline</button>
+	  </ion-item>
+	</ion-item>
+ 
+ 
+  <ion-item *ngIf="errorValue == 1">
+		
+	<h2> You have not been assigned any new tasks yet. </h2>
+  </ion-item>-->
+   <!-- <ion-item> -->
+    <!-- <h2>Patient 1</h2> -->
+    <!-- <p text-wrap>17 Apr 2017,4:30PM</p> -->
+    <!-- <button color="blu" ion-button item-right >Accept</button> -->
+    <!-- <button color="danger" ion-button item-right >Decline</button> -->
+  <!-- </ion-item> 
+</ion-list>-->
+
+
+
+
+
+<ion-footer class="ftr" no-border>
+  <ion-toolbar >
+
+    <ion-grid>
+  <ion-row>
+ <!--
+    <ion-col>
+     <button ion-button block color="blu" [disabled]="schedule == 1"  (click)="schPage();">Schedule</button>
+     </ion-col>
+
+    <ion-col>
+      <button ion-button block color="blu" (click)="unschPage();">Unschedule</button>
+    </ion-col>
+ -->
+  </ion-row>
+
+  
+</ion-grid>
+
+  </ion-toolbar>
+</ion-footer>
+
+</ion-content>

@@ -1,0 +1,58 @@
+page-report {
+
+
+  .pic {
+    text-align: center;
+    padding: 8vh 0;
+}
+
+.pic img {
+    width: 40vh;
+}
+
+.list-ios > .item-block:first-child {
+    border-top: 0px solid #c8c7cc;
+}
+
+.main_sec{
+
+   .input{
+            font-size: 14px;
+        }
+
+    .item.item-md .checkbox-md {
+        margin: 0px 10px 0px 24px;
+    }
+
+
+    .checkbox-ios .checkbox-checked {
+        border-color: #3fb1ce;
+        background-color: #3fb1ce;
+    }
+
+    .checkbox-md .checkbox-checked {
+    border-color: #3fb1ce;
+    background-color: #3fb1ce;
+}
+
+}
+
+
+.remem.item.item-block.item-ios.item-checkbox{border-bottom: 0px solid;}
+
+.item.item-ios .checkbox-ios {
+    margin: 8px 7px 8px 12px;
+}
+
+
+.alred a {color:#3fb1ce;}
+
+.alert.alert-danger {
+	position: absolute;
+	bottom: 4px;
+	font-size: 11px;
+	right: 0;
+	color: #ff0000;
+}
+
+}

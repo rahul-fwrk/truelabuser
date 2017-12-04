@@ -1,0 +1,214 @@
+<ion-header hidden>
+  <ion-toolbar color="blu">
+    <button ion-button menuToggle left>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Title</ion-title>
+    <button ion-button menuToggle right>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  </ion-toolbar>
+</ion-header>
+
+
+
+
+
+
+
+<ion-content class="main_sec" padding>
+ <form (ngSubmit)="onSubmit()" #heroForm="ngForm"novalidate>
+	<div class="pic">
+		<img src="assets/images/logo.png" />
+	</div>
+
+   <ion-list>
+  
+   <ion-item>
+  
+    <ion-label floating>First name</ion-label>
+     <ion-input  [(ngModel)]="data.fname" name="fname" type="text"  pattern="[a-zA-Z]+" id="fname" required #fname="ngModel"></ion-input>
+  <ion-label>
+     <div *ngIf="fname.errors && (fname.dirty || fname.touched)" class="alert alert-danger">
+       <div [hidden]="!fname.errors.required" class="alert alert-danger">
+         First name is required
+        </div>
+		<div [hidden]="!fname.errors.pattern" class="alert alert-danger">
+         Invalid first name
+        </div>
+     </div>
+    </ion-label>
+  </ion-item>
+	
+	
+   <ion-item>
+     <ion-label floating>Last name</ion-label>
+     <ion-input  [(ngModel)]="data.lname" name="lname" type="text" pattern="[a-zA-Z]+" id="lname" required #lname="ngModel"></ion-input>
+   
+   <ion-label>
+    <div *ngIf="lname.errors && (lname.dirty || lname.touched)" class="alert alert-danger">
+       <div [hidden]="!lname.errors.required" class="alert alert-danger">
+         Last name is required
+       </div>
+	   <div [hidden]="!lname.errors.pattern" class="alert alert-danger">
+          Invalid last name
+       </div>
+    </div>
+   </ion-label>
+  </ion-item>
+  
+   <ion-item>
+    <ion-label floating>Email</ion-label>
+    <ion-input  [(ngModel)]="data.email" name="email" type="email" id="email" required pattern='^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$' #email="ngModel"></ion-input>
+  
+   <ion-label>
+		<div *ngIf="email.errors && (email.dirty || email.touched)" class="alert alert-danger">
+		   <div [hidden]="!email.errors.required" class="alert alert-danger">
+			 Email is required
+			</div>
+			<div [hidden]="!email.errors.pattern" class="alert alert-danger">
+			 In-valid Email
+			</div>
+		</div>
+    </ion-label>
+     </ion-item>
+  
+
+  
+  
+  <ion-item>
+    <ion-label floating>Mobile Number</ion-label>
+	<ion-input  [(ngModel)]="data.phone" name="phone"  type="number"  required  #phone="ngModel"></ion-input>
+	<!-- (ngModelChange)="isnumber($event)" -->
+  
+	<ion-label>
+		<div *ngIf="phone.errors && (phone.dirty || phone.touched)" class="alert alert-danger">
+		    <div [hidden]="!phone.errors.required" class="alert alert-danger">
+				Enter a valid phone number
+			</div>
+
+		</div>
+		<!-- <div *ngIf="this.notnumber == 1" class="alert alert-danger"> Invalid Format </div> -->
+    </ion-label>
+    </ion-item>
+ 
+  <ion-item>
+    <ion-label floating>Address</ion-label>
+	<ion-input  [(ngModel)]="data.address" name="address"  type="text"  required  #address="ngModel"></ion-input>
+	<!-- (ngModelChange)="isnumber($event)" -->
+  
+	<ion-label>
+		<div *ngIf="address.errors && (address.dirty || address.touched)" class="alert alert-danger">
+		    <div [hidden]="!address.errors.required" class="alert alert-danger">
+				This field is required
+			</div>
+
+		</div>
+    </ion-label>
+  </ion-item>
+
+   <ion-item>
+    <ion-label floating>Address 2</ion-label>
+	<ion-input  [(ngModel)]="data.address2" name="address2"  type="text"  #address2="ngModel"></ion-input>
+	<!-- (ngModelChange)="isnumber($event)" -->
+  
+	<ion-label>
+		<div *ngIf="address2.errors && (address2.dirty || address2.touched)" class="alert alert-danger">
+		    <div [hidden]="!address2.errors.required" class="alert alert-danger">
+				This field is required
+			</div>
+
+		</div>
+    </ion-label>
+  </ion-item>
+
+ <ion-item>
+    <ion-label floating>City</ion-label>
+	<ion-input  [(ngModel)]="data.city" name="city"  type="text"  required  #city="ngModel"></ion-input>
+	<!-- (ngModelChange)="isnumber($event)" -->
+  
+	<ion-label>
+		<div *ngIf="city.errors && (city.dirty || city.touched)" class="alert alert-danger">
+		    <div [hidden]="!city.errors.required" class="alert alert-danger">
+				This field is required
+			</div>
+
+		</div>
+    </ion-label>
+  </ion-item>
+
+
+ <ion-item>
+    <ion-label floating>State</ion-label>
+	<ion-input  [(ngModel)]="data.state" name="state"  type="text"  required  #state="ngModel"></ion-input>
+	<!-- (ngModelChange)="isnumber($event)" -->
+  
+	<ion-label>
+		<div *ngIf="state.errors && (state.dirty || state.touched)" class="alert alert-danger">
+		    <div [hidden]="!state.errors.required" class="alert alert-danger">
+				This field is required
+			</div>
+
+		</div>
+    </ion-label>
+  </ion-item>
+
+   
+  <ion-item>
+    <ion-label floating>Zip Code</ion-label>
+	<ion-input  [(ngModel)]="data.zip" name="zip"  type="number"  required  #zip="ngModel"></ion-input>
+	<!-- (ngModelChange)="isnumber($event)" -->
+  
+	<ion-label>
+		<div *ngIf="zip.errors && (zip.dirty || zip.touched)" class="alert alert-danger">
+		    <div [hidden]="!zip.errors.required" class="alert alert-danger">
+				Please enter a valid Zip Code
+			</div>
+
+		</div>
+    </ion-label>
+   </ion-item>
+  
+  
+  
+  <ion-item>
+    <ion-label floating>Password</ion-label>
+    <ion-input  [(ngModel)]="data.password" name="password" type="password" id="password" required minlength="6"  #password="ngModel"></ion-input>
+    
+   <ion-label>
+		<div *ngIf="password.errors && (password.dirty || password.touched)" class="alert alert-danger">
+		   <div [hidden]="!password.errors.required" class="alert alert-danger">
+			 Password is required
+			</div>
+       <div [hidden]="!password.errors.minlength" class="alert alert-danger">
+			 Minimum length should be 6
+			</div>
+		</div>
+    </ion-label>
+    </ion-item> 
+ 
+  
+  
+  
+  <ion-item style="border-bottom: 1px solid #e8e7ee;">
+    <ion-label floating>Confirm Password</ion-label>
+    <ion-input  [(ngModel)]="data.cpassword" name="cpassword" type="password" id="cpassword" required minlength="6"  #cpassword="ngModel"></ion-input>
+ 
+  <ion-label>
+		<div *ngIf="cpassword.errors && (cpassword.dirty || cpassword.touched)" class="alert alert-danger">
+		   <div [hidden]="!cpassword.errors.required" class="alert alert-danger">
+			 Please confirm your password
+			</div>
+		   <div [hidden]="!cpassword.errors.minlength" class="alert alert-danger">
+			 Minimum length should be 6
+			</div>
+		</div>
+	</ion-label>
+   </ion-item>
+  
+ </ion-list>
+
+ <button ion-button block color="blu" [disabled]="!heroForm.form.valid" (click)="register(heroForm)">SIGN UP</button>
+</form>
+<div text-center class="alred" padding-bottom>Already have an account? <a (click)="siPage();">Sign In</a> </div>
+</ion-content>

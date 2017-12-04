@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar color="blu">
+    <ion-buttons left>
+      <button ion-button (click)="doYourStuff();removeSign()">
+            <ion-icon class="customIcon" name="arrow-back"></ion-icon>
+        </button>
+    </ion-buttons>
+    <ion-title>Back</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="main_sec" padding>
+
+<!--pdf-viewer-->
+  <!--<div>
+      <label>PDF src</label>
+      <input type="text" placeholder="PDF src" [(ngModel)]="pdfSrc">
+  </div>-->
+  <!--<div>
+      <label>Page:</label>
+      <input type="number" placeholder="Page" [(ngModel)]="page">
+  </div>-->
+  <pdf-viewer [src]="this.src" [original-size]="false" [zoom]="0.5" [render-text]="false" style="display: block;"
+  ></pdf-viewer>
+
+<!--signaturepad starts-->
+
+  <div class="title">Patient's Signature</div>
+  <ion-row [ngClass]="{'drawing-active': isDrawing}">
+    <ion-col></ion-col>
+    <ion-col>
+      <signature-pad [options]="signaturePadOptions" (onBeginEvent)="drawStart()" (onEndEvent)="drawComplete()"></signature-pad>
+    </ion-col>
+    <ion-col></ion-col>
+ 
+  </ion-row>
+  <button ion-button full color="danger" (click)="clearPad()">Clear</button>
+  <button ion-button full color="secondary" (click)="savePad()">Save</button>
+ 
+  <!--<ion-row>
+    <ion-col></ion-col>
+    <ion-col width-80>
+      <img [src]="signature"/>
+    </ion-col>
+    <ion-col></ion-col>
+  </ion-row>-->
+  <ion-list style="margin-bottom: 0;">
+
+    <ion-item class="remem">
+      <!-- <ion-label>Remember me next time</ion-label> -->
+      <!-- <ion-checkbox [(ngModel)]="pepperoni"></ion-checkbox> -->
+    </ion-item>
+
+  </ion-list>
+
+</ion-content>
